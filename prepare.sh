@@ -1,10 +1,9 @@
 #!/bin/sh
 CURRENT_PATH=$(cd $(dirname $0);pwd)
-DATE=`date '+%Y%m%d'`
 
 if [ $# == 0 ]; then
     # default contest: ABC
-    FOLDER_PATH="${CURRENT_PATH}/ABC_${DATE}"
+    FOLDER_PATH="${CURRENT_PATH}/ABC"
     mkdir ${FOLDER_PATH}
     # default language: python
     touch "${FOLDER_PATH}/A.py"
@@ -14,7 +13,7 @@ if [ $# == 0 ]; then
     touch "${FOLDER_PATH}/E.py"
     touch "${FOLDER_PATH}/F.py"
 elif [ $# == 1 ]; then
-    FOLDER_PATH="${CURRENT_PATH}/$1_${DATE}"
+    FOLDER_PATH="${CURRENT_PATH}/$1"
     mkdir ${FOLDER_PATH}
     # default language: python
     touch "${FOLDER_PATH}/A.py"
@@ -24,7 +23,7 @@ elif [ $# == 1 ]; then
     touch "${FOLDER_PATH}/E.py"
     touch "${FOLDER_PATH}/F.py"
 elif [ $# == 2 ]; then
-    FOLDER_PATH="${CURRENT_PATH}/$1_${DATE}"
+    FOLDER_PATH="${CURRENT_PATH}/$1"
     mkdir ${FOLDER_PATH}
     touch "${FOLDER_PATH}/A.$2"
     touch "${FOLDER_PATH}/B.$2"
